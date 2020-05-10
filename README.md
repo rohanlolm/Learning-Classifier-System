@@ -2,8 +2,6 @@ PXR-UCS Quick Start Readme
 ============
 ### Typeset in Markdown - Best viewed in a Markdown Interpreter. 
 ### Rohan Mehra - rohan.lol.m@gmail.com
-### CEED Project: Adaptive Schedule Optimisation 
-### **Supervisors**: Mark Reynolds, Tim French, Ron Lee, Tiago Domingos
 ### Date: 1/06/2017
 ________________
 
