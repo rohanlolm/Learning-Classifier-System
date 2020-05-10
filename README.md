@@ -17,6 +17,22 @@ In order to run the PXR-UCS system, the following must be installed:
 - GCC C compiler 
 ___________________________________
 
+## Compiling 
+The project is intended to be compiled with ``gcc`` under windows. A batch file ``make.bat`` has been provided to compile/build the project. Simply run ``make.bat`` in the command window and an executable will be built. The `march=native` compiler option speeds up execution but preduces an executable which is architecture specific. This option should be removed from the  `make` file for cross-platform executable generation. 
+
+Currently the **LCS\_C\_imp** has the following files: 
+
+### Header Files: 
+0.   ``LCS_protos.h`` : Contains all function prototypes and ``#define`` constants 
+0. ``LCS_structs.h``: Contains all structure and type definitions 
+
+### C Source Files 
+0. ``LCS_main.c``:  Contains all core LCS functions as well as the ``main()`` function. 
+0. ``LCS_datafs.c``: Contains all functions for importing data, creating data structures, and populating data structures. 
+0. ``LCS_helperfs.c``: Contains all helper functions, such as random number generators, sorting, cleaning, etc. 
+0. ``LCS_geneticfs.c``: Contains all functions required for the GA to function correctly. Including evolution, mutation functions, and children updaters. 
+_______________________
+
 Quick Start
 ---------------------
 To run the PXR-UCS system move the following files to a directory:
@@ -47,8 +63,6 @@ There are 5 key sections to the config file as stated below:
 
 ### Datafile_Names:
 - `is_mux`: Enable to 1 if using Multiplexer data set. Else 0 
-- `heuristics`: Enable to 1 to use heuristic data compression with Rake data. Recommended. 
-- `is_port`: Enable to 1 if using Port Dataset Else 0 
 - `input_datafilename`: Name of input data set. Typically a `.CSV` file
 - `training_filename`:  An output plaintext file is generated through the data parser containing training data. This is the name of the created file.
 - `validation_filename`:An output plaintext file is generated through the data parser containing  validation data. This is the name of the created file.
@@ -57,8 +71,7 @@ There are 5 key sections to the config file as stated below:
 - `rule_text_filename`: Output text file name. 
 
 ### Columns 
-Columns do not need to specified for the Rake and MUX datasets, i.e. if `is_rake = 1`. For parsing reasons a values must be put in even for Rake sets, but can be arbitrary.
- 
+
 - `predictor_names`: Column headings names for predictors/features as a comma separated list. 
 - `class_names`: Column heading names for output class columns as comma separated list. 
 
@@ -81,11 +94,6 @@ The following parameters are used to set train/test data splits and PRNG seeds.
 
 PXR-UCS C99 Command Line Interface 
 =========================
-### Rohan Mehra - rohan.lol.m@gmail.com 
-### CEED Project (Adaptive Schedule Optimisation)
-### **Supervisors:** Mark Reynolds, Tim French, Lyndon While, Ron Lee, Tiago Domingos
-### Date: 1/06/2017
-
 This program implements a *pseudo-Pittsburgh*, accuracy based, supervised Learning Classifier System on for multi-class classification, and adaptive scheduling. This program is **not** intended to be used in isolation,  but rather with the companion Python Application Interface and associated configuration file. 
 ___________________________
 
@@ -130,30 +138,8 @@ The following options have also been implemented:
 
 ______________________
 
-## Compiling 
-The project is intended to be compiled with ``gcc`` under windows. A batch file ``make.bat`` has been provided to compile/build the project. Simply run ``make.bat`` in the command window and an executable will be built. The `march=native` compiler option speeds up execution but preduces an executable which is architecture specific. This option should be removed from the  `make` file for cross-platform executable generation. 
-
-Currently the **LCS\_C\_imp** has the following files: 
-
-### Header Files: 
-0.   ``LCS_protos.h`` : Contains all function prototypes and ``#define`` constants 
-0. ``LCS_structs.h``: Contains all structure and type definitions 
-
-### C Source Files 
-0. ``LCS_main.c``:  Contains all core LCS functions as well as the ``main()`` function. 
-0. ``LCS_datafs.c``: Contains all functions for importing data, creating data structures, and populating data structures. 
-0. ``LCS_helperfs.c``: Contains all helper functions, such as random number generators, sorting, cleaning, etc. 
-0. ``LCS_geneticfs.c``: Contains all functions required for the GA to function correctly. Including evolution, mutation functions, and children updaters. 
-_______________________
-
-PXR-UCS Data Sets Readme
+PXR-UCS Data Sets 
 ============
-### Typeset in Markdown - Best viewed in a Markdown Interpreter. 
-### Rohan Mehra - rohan.lol.m@gmail.com
-### CEED Project: Adaptive Schedule Optimisation 
-### **Supervisors**: Mark Reynolds, Tim French, Ron Lee, Tiago Domingos
-### Date: 1/06/2017
-
 More detailed information about data sets presented below can be found in my thesis in `Section 4: Experimental Validation`. Associated with each data set type is a pre-populated  `.ini` configuration file, to be able to run the *PXR-UCS* System. 
 _____________
 ## Generic Data Sets
