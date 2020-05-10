@@ -1,8 +1,9 @@
-PXR-UCS Quick Start Readme
+Psuedo-Michigan Style Supervidsed Learning Classifier System (LCS) Readme
 ============
 ### Typeset in Markdown - Best viewed in a Markdown Interpreter. 
 ### Rohan Mehra - rohan.lol.m@gmail.com
 ### Date: 1/06/2017
+### Please get in contact on the email above if you'd like to learn more, or get access to my thesis and performance results. 
 ________________
 
 The PXR-UCS
